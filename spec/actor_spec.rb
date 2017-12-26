@@ -10,7 +10,6 @@ describe "Actor" do
   it "has a first and last name" do
     # TODO set up the basic data model for actor
     actor = Actor.create(:first_name => "Emilia", :last_name => "Clarke")
-
     expect(actor.first_name).to eq("Emilia")
     expect(actor.last_name).to eq("Clarke")
   end
@@ -24,6 +23,7 @@ describe "Actor" do
     khaleesi.save
 
     khaleesi.reload
+
     expect(emilia.characters).to include(khaleesi)
     expect(khaleesi.actor).to eq(emilia)
   end
@@ -72,6 +72,7 @@ describe "Actor" do
     khaleesi.save
 
     khaleesi.reload
+    # binding.pry
     expect(emilia.list_roles).to include("Khaleesi - Game of Thrones")
   end
 end
